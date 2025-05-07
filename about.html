@@ -1,0 +1,1036 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKE-About</title>
+    <link rel="shortcut icon" href="./image/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" />
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+        
+        ::-webkit-scrollbar{
+            width: 15px;
+        }
+        
+        ::-webkit-scrollbar-track{
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            border-radius: 5px;
+            background: linear-gradient(to top, #181818 , #575555);
+        }
+
+        .about{
+            width: 45%;
+            color: white;
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 50px;
+        }
+
+        .about-img{
+            width: 600px;
+            height: auto;
+            float: right;
+            margin: 112px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .container1{
+            width: auto;
+            background-color: rgb(0, 0, 0);
+            height: 85vh;
+            margin-top: 1px;
+            position: relative;
+        }
+
+        .btn-info{
+            width: 250px;
+            padding-left: 12%;
+            margin-left: 50px;
+            color: white;
+            margin-top: -50px;
+        }
+
+        .about-h2{
+            width: 30vw;
+            color: white;
+            text-align: center;
+        }
+
+        .about-h1{
+            color: white;
+            font-size: 65px;
+            width: 35%;
+            text-align: center;
+        }
+
+        .about-paragraph{
+            padding-left: 12%;
+            padding-top: 11%;
+        }
+
+        .btn-outline-light{
+            margin-left: 125px;
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-outline-info{
+            margin-top: 20px;
+        }
+
+        .product-slider{
+            margin-top: 7vh;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .slider-track{
+            display: flex;
+            gap: 30px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .slide{
+            flex: 0 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .slide img{
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .slide:hover{
+            transform: scale(1.1);
+        }
+
+        .slider-h1{
+            color: #000;
+            font-size: 60px;
+            text-align: center;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        @keyframes scroll{
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-50%);}
+        }
+
+        .product{
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            background-color: #000;
+            margin-top: 6%;
+            color: white;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .product-paragraph{
+            width: 40%;
+            font-size: 18px;
+            font-family: sans-serif;
+            margin-top: 50px;
+        }
+
+        .card > img:hover{
+            transform: scale(0.9);
+        }
+
+        .container2{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: auto;
+            flex-direction: row;
+            padding: 35px;
+        }
+
+        .review {
+            width: 100%;
+            height: auto;
+            padding-top: 45px;
+        }
+        
+        .review h1 {
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .review h1 span {
+            background: linear-gradient(to left, rgb(255, 255, 255), rgb(245, 245, 245));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 15px;
+        }
+        
+        .review .review_box {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0px 0;
+        }
+            
+        .review .profile .profile_image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 5px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .review .profile .profile_image:hover {
+            transform: scale(1.2);
+        }
+        
+        .review .profile_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .review .profile {
+            display: flex;
+            align-items: center;
+        }
+        
+        .review .review_box .review_card {
+            width: 385px;
+            background: #f3f1f1;
+            padding: 20px 25px;
+            border-radius: 5px;
+            margin: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        .review .review_box .review_card .card_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .review .review_box .review_card .card_top .profile .name {
+            margin-left: 20px;
+            line-height: 22px;
+        }
+        
+        .review .review_box .review_card .card_top .profile .name strong {
+            font-size: 20px;
+        }
+        
+        .review .review_box .review_card .card_top .profile .name .like i {
+            color: orange;
+            display: inline-block;
+            font-size: 12px;
+        }
+        
+        .review .review_box .review_card .comment p {
+            text-align: justify;
+            line-height: 22px;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 992px) {
+            .review h1 {
+                font-size: 45px;
+            }
+            .review .review_box .review_card {
+                width: 90%;
+            }
+            .container1{
+                height: 120vh;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .review h1 {
+                font-size: 35px;
+                text-align: center;
+            }
+            .review .review_box {
+                flex-direction: column;
+                top: 0;
+                gap: 20px;
+            }
+            .review .review_box .review_card {
+                width: 95%;
+                padding: 15px 20px;
+            }
+            .container1{
+                height: 90vh;
+            }
+        }
+        
+        .container4{
+            background-color: #000000;
+            height: auto;
+            width: 100%;
+        }
+
+        .services{
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 0 10px 0;
+        }
+
+        .services h1{
+            font-size: 60px;
+            text-transform: uppercase;
+        }
+
+        .services h1 span{
+            margin-left: 15px;
+            background: linear-gradient(to left, rgb(0, 0, 0), rgb(0, 0, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services .services_cards{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            top: 50px;
+        }
+
+        .services .services_box i{
+            font-size: 60px;
+            color: orange;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .services .services_box h3{
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .services .services_box p{
+            text-align: center;
+            color: #919191;
+            margin-bottom: 60px;
+        }
+
+        .contact-us{
+            width: 100%;
+            height: auto;
+            padding-top: 20px;
+            background-color: #000;
+            margin-top: 50px;
+        }
+
+        .contact-us-content{
+            display: flex;
+            flex-direction: row;
+            padding-left: 5%;
+        }
+
+        .contact-us-paragraph{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        iframe{
+            padding: 0 100px 40px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 992px) {
+            .about {
+                width: 90%;
+                padding: 20px;
+                text-align: center;
+                margin: auto;
+            }
+
+            .about-img {
+                width: 90% !important;
+                height: auto !important;
+                float: none;
+                margin: 20px auto;
+                display: block;
+            }
+
+            .about-h1 {
+                font-size: 45px;
+                width: 100%;
+            }
+
+            .about-h2 {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container1{
+                height: 95vh;
+            }
+
+            .container2 {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .product {
+                flex-direction: column;
+                padding: 20px;
+                gap: 30px;
+            }
+
+            .product-paragraph {
+                width: 100%;
+                margin-top: 20px;
+                font-size: 16px;
+            }
+
+            .product img {
+                width: 100%;
+                height: auto;
+            }
+
+            .btn-light{
+                margin-left: 30%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services .services_cards {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            iframe {
+                padding: 10px;
+                width: 100% !important;
+                height: 300px !important;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: none;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            transition: background-color 0.3s ease;
+        }
+        
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(27, 23, 23);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.footer-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-top: 5%;
+    padding-bottom: 25px;
+    margin-top: -50px;
+}
+
+.footer-button{
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.footer-button:hover{
+    background-color: #ffffff;
+    color: rgb(6, 6, 6);
+}
+
+.footer-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-top: 25px;
+    z-index: 10000;
+}
+
+.fa-facebook ,.fa-instagram ,.fa-linkedin ,.fa-github ,.fa-youtube{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}   
+
+.icons{
+    border: 1px solid #635f40;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.icon-facebook:hover{
+    background-color: rgb(62, 62, 191);
+    transition: 0.5s;
+}
+
+.icon-instagram:hover{
+    background: linear-gradient(to top, rgb(221, 239, 20) , rgb(207, 80, 143) , rgb(166, 2, 166));
+    transition: 0.5s;
+}
+
+.icon-linkedin:hover{
+    background-color: rgb(57, 57, 173);
+    transition: 0.5s;
+}
+
+.icon-github:hover{
+    background-color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+
+.icon-youtube:hover{
+    background-color: rgb(184, 15, 15);
+    transition: 0.5s;
+}
+
+.footer-paragraph{
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+.footer-paragraph-span{
+    color: #967d00;
+    font-weight: bold;
+}
+
+@media (max-width:748px) {
+    .footer-buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top:70px;
+        height: auto;
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
+                <path d="M3.53125 24.222656C4.5 26.84375 6.957031 28.382813 10.417969 28.382813C11.300781 28.382813 12.203125 28.253906 13.089844 28.003906C13.234375 27.96875 18.75 26.472656 25.484375 24.644531C18.839844 27.519531 13.074219 29.996094 11.90625 30.460938L11.84375 30.488281C10.164063 31.160156 8.070313 31.996094 6.132813 31.996094C2.742188 31.996094 2 29.761719 2 28.902344C2 27.902344 2.335938 26.398438 3.53125 24.222656M49.839844 16.003906C49.785156 16.003906 49.722656 16.011719 49.644531 16.03125C49.480469 16.070313 12.566406 26.074219 12.566406 26.074219C11.855469 26.273438 11.128906 26.382813 10.417969 26.382813C7.226563 26.382813 5.078125 24.851563 5.078125 21.507813C5.078125 20.207031 5.484375 18.640625 6.40625 16.800781C3.152344 20.621094 0 25.234375 0 28.902344C0 31.019531 1.78125 33.996094 6.128906 33.996094C8.484375 33.996094 10.820313 33.050781 12.648438 32.320313C15.730469 31.085938 49.789063 16.296875 49.789063 16.296875C50.058594 16.164063 50.066406 16.003906 49.839844 16.003906Z"></path>
+            </svg>NIKE
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link disabled" aria-disabled="true" style="color: white; background:#000; width:70px; text-align:center; border-radius:10px;">About</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categories</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./index.html">Shoes</a></li>
+                    <li><a class="dropdown-item" href="./Clothing.html">Clothing</a></li>
+                    <li><a class="dropdown-item" href="./sport.html">Sports</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Setting</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#shop-drop">Shop</a></li>
+                    <li><a class="dropdown-item" href="#review-drop">Review</a></li>
+                    <li><a class="dropdown-item" href="#service-drop">Service</a></li>
+                    <li><a class="dropdown-item" href="#map-drop">Map</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="./contact.html">Contact US</a></li>
+                </ul>
+            </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <div id="backToTop">↑ Top</div>
+
+    <div class="container1 reveal">
+        <img src="./image/Nike-Logo.png" alt="Nike Logo" class="about-img reveal">
+        <div class="about-paragraph">
+            <h1 class="about-h1">NIKE STORE</h1>
+            <h2 class="about-h2">Always with you to serve you Just Do It.</h2>
+            <a href="#shop-drop"><button type="button" class="btn btn-outline-light">BUY NOW</button></a>
+            <a href="#review-drop"><button type="button" class="btn btn-outline-info">Learn more</button></a>
+        </div>
+    </div>
+
+    <h1 class="slider-h1 reveal">New collection</h1>
+
+    <div class="product-slider">
+        <div class="slider-track">
+            <div class="slide"><img src="./image/shoes1.png" alt="Product 1"></div>
+            <div class="slide"><img src="./image/1.png" alt="Product 2"></div>
+            <div class="slide"><img src="./image/sport12.jpg" alt="Product 3"></div>
+            <div class="slide"><img src="./image/shoes2.png" alt="Product 4"></div>
+            <div class="slide"><img src="./image/2.jpg" alt="Product 5"></div>
+            <div class="slide"><img src="./image/sport11.jpg" alt="Product 6"></div>
+            <div class="slide"><img src="./image/3.jpg" alt="Product 7"></div>
+            <div class="slide"><img src="./image/sport-sale3.jpg" alt="Product 8"></div>
+            <div class="slide"><img src="./image/shoes5.png" alt="Product 9"></div>
+            <div class="slide"><img src="./image/shoes8.png" alt="Product 10"></div>
+            <div class="slide"><img src="./image/sport15.jpg" alt="Product 11"></div>
+            <div class="slide"><img src="./image/15.jpg" alt="Product 12"></div>
+            <div class="slide"><img src="./image/19.jpg" alt="Product 13"></div>
+            <div class="slide"><img src="./image/N4.JPG" alt="Product 14"></div>
+            <div class="slide"><img src="./image/N1.jpg" alt="Product 15"></div>
+            <div class="slide"><img src="./image/shoes8.png" alt="Product 16"></div>
+            <div class="slide"><img src="./image/shoes7.png" alt="Product 17"></div>
+            <div class="slide"><img src="./image/20.jpg" alt="Product 18"></div>
+            <div class="slide"><img src="./image/sport13.jpg" alt="Product 19"></div>
+            <div class="slide"><img src="./image/sport16.jpg" alt="Product 20"></div>
+            <div class="slide"><img src="./image/scroll21.jpg" alt="Product 21"></div>
+            <div class="slide"><img src="./image/scroll22.jpg" alt="Product 22"></div>
+        </div>
+    </div>
+
+    <div class="product reveal">
+        <p class="product-paragraph">Nike shoes are designed for those who never settle for average.
+            More than just a pair of sneakers, they represent a lifestyle built on ambition, passion, and confidence.
+            Whether you're pushing your limits at the gym, running through the streets,
+            or simply making a statement with your everyday style, Nike shoes deliver the perfect combination of advanced comfort,
+            durable materials, and bold design. With every step, you'll feel the difference engineered to support your
+            performance and crafted to elevate your look. Choose Nike, and step into a world where innovation meets inspiration.
+            <br>
+            <a href="#shop-drop"><button type="button" class="btn btn-light" style="margin-top: 25px; width:180px;">Shop Now</button></a>
+        </p>
+        <img src="./image/about-about.jpg" height="400px" width="500px" style="border-radius: 25px; border:solid 2px white;">
+    </div>
+        <div id="products"></div>
+    <div class="container2 reveal" id="shop-drop">
+        <div class="card" style="width: 18rem;">
+        <img src="./image/shoes-about.jpg" class="card-img-top" alt="..." height="250px">
+        <div class="card-body">
+            <h5 class="card-title">Shoes</h5>
+            <p class="card-text">Nike sneakers offer a blend of style, comfort, and performance, featuring innovative designs and advanced cushioning technologies.</p>
+            <a href="./index.html" class="btn btn-dark" style="width: 260px;">Shop Now</a>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./image/10.jpg" class="card-img-top" alt="..." height="250px">
+        <div class="card-body">
+            <h5 class="card-title">Clothing</h5>
+            <p class="card-text">Nike t-shirts combine sporty style with comfort, using breathable fabrics and modern designs for everyday wear.</p>
+            <a href="./Clothing.html" class="btn btn-dark" style="width: 260px;">Shop Now</a>
+        </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+        <img src="./image/ronaldo-about.webp" class="card-img-top" alt="..." height="280px">
+        <div class="card-body">
+            <h5 class="card-title">Sports</h5>
+            <p class="card-text">Nike sportswear delivers high-performance gear with innovative technology, ensuring comfort, durability, and style for athletes.</p>
+            <a href="./sport.html" class="btn btn-dark" style="width: 260px;">Shop Now</a>
+        </div>
+        </div>
+    </div>
+
+    <div id="review-drop"></div>
+    <div id="review"></div>
+    <div class="container4 reveal" id="review">
+        <div class="review" id="Review">
+            <h1><span class="customer" style="color:white;">Customer's</span><span>review</span></h1>
+            
+            <div class="review_box">
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about1.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>Vidurangi Ronald</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p>
+                            Nike's website provides an outstanding shopping experience with its sleek and user-friendly interface. Navigating through 
+                            different product categories is effortless, allowing customers to explore and purchase the latest sportswear and footwear with ease.
+                        </p>
+                    </div>
+                </div>   
+    
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about2.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>Sergio Ronaldo</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p>
+                            The website features a modern and visually appealing design that perfectly reflects Nike’s brand identity.
+                            High-resolution images and dynamic layouts enhance the 
+                            shopping experience, making it enjoyable for users to browse through collections.
+                        </p>
+                    </div>
+                </div>   
+    
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about3.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>Lucas Neuer</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p>
+                            With detailed product descriptions, sizing charts, and customer reviews, 
+                            Nike ensures that shoppers have all the necessary information before making a 
+                            purchase. This transparency helps customers choose the right products that suit their needs.
+                        </p>
+                    </div>
+                </div>   
+    
+            </div>
+    
+            <div class="review_box">
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about4.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>Kaveesha Vidurangi</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p>
+                            The website is optimized for both desktop and mobile users, ensuring a smooth and responsive 
+                            browsing experience. Fast-loading pages and seamless transitions between sections contribute 
+                            to a hassle-free shopping process.
+                        </p>
+                    </div>
+                </div>   
+    
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about5.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>John Deo</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p>
+                            One of the standout features of Nike’s website is its customization option, allowing customers
+                            to design their own sneakers with personalized colors, materials, and engravings.
+                            This feature adds a unique touch and makes the shopping experience even more engaging.
+                        </p>
+                    </div>
+                </div>   
+    
+                <div class="review_card">
+                    <div class="card_top">
+                        <div class="profile">
+    
+                            <div class="profile_image">
+                                <img src="./image/man-about6.jpg">
+                            </div>
+    
+                            <div class="name">
+                                <strong>Charith Aruna</strong>
+    
+                                <div class="like">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <p>
+                            Nike frequently updates its website with new product releases, exclusive collections, 
+                            and limited-time offers. This keeps customers excited and encourages them to return regularly
+                            to explore the latest innovations in sportswear and footwear.
+                        </p>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <div id="service-drop"></div>
+    <div class="services reveal" id="Servises">
+        <h1>our<span>services</span></h1>
+
+        <div class="services_cards">
+            <div class="services_box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>
+                    ⚡ Get your order quickly with our fast and reliable shipping options.
+                </p>
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-rotate-left"></i>
+                <h3>10 Days Replacement</h3>
+                <p>
+                    🔄 Easily replace your product within 10 days if it doesn’t meet your expectations.
+                </p>
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24 x 7 Support</h3>
+                <p>
+                    🛠️ Our support team is available 24/7 to assist you with any inquiries.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="map-drop"></div>
+    <div class="contact-us reveal">
+        <p class="contact-us-paragraph">Visit our branches</p>
+    <div class="contact-us-content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d110594.76777031002!2d30.9958649!3d29.9769442!3m2!1i1024!2i768!4f13.1!2m1!1snike%20map!5e0!3m2!1sar!2seg!4v1745074846682!5m2!1sar!2seg" 
+        width="1600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
+    </div>
+
+        <div class="footer">
+            <div class="footer-icon">
+                <div class="icon-facebook icons"><a href="https://www.facebook.com/nike/?locale=ar_AR"><i class="fa-brands fa-facebook"></i></a></div>
+                <div class="icon-instagram icons"><a href="https://www.instagram.com/nike/"><i class="fa-brands fa-instagram"></i></a></div>
+                <div class="icon-linkedin icons"><a href="https://www.linkedin.com/company/nike"><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="icon-github icons"><a href="https://github.com/nike-inc"><i class="fa-brands fa-github"></i></a></div>
+                <div class="icon-youtube icons"><a href="https://www.youtube.com/user/nike"><i class="fa-brands fa-youtube"></i></a></div>
+            </div>
+            <div class="footer-buttons">
+                <a href="#home"><button class="footer-button">Home</button></a>
+                <a href="./about.html"><button class="footer-button" id="about">About</button></a>
+                <a href="#products"><button class="footer-button">Products</button></a>
+                <a href="#review"><button class="footer-button">Review</button></a>
+                <a href="./contact.html"><button class="footer-button">Contact</button></a>
+            </div>
+        </div>
+    
+    <script>
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 100;
+    
+                if (elementTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+    
+        const backToTopBtn = document.getElementById("backToTop");
+    
+        function toggleBackToTop() {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+    
+        backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    
+        const navbar = document.querySelector("nav");
+    
+        function handleNavbarColor() {
+            if (window.scrollY > 100) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    
+        window.addEventListener("DOMContentLoaded", () => {
+            revealOnScroll();         
+            toggleBackToTop();  
+            handleNavbarColor();      
+        });
+    
+        window.addEventListener("scroll", () => {
+            revealOnScroll();
+            toggleBackToTop();
+            handleNavbarColor();
+        });
+    
+        requestAnimationFrame(function scrollRepeat() {
+            revealOnScroll();
+            requestAnimationFrame(scrollRepeat); 
+        });
+    </script>
+</body>
+</html>

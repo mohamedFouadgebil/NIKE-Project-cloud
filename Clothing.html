@@ -1,0 +1,1334 @@
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKE-Clothing</title>
+    <link rel="stylesheet" href="./Clothing.css">
+    <link rel="shortcut icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+  .card img {
+    height: 520px; 
+    object-fit: cover; 
+    width: 100%;
+    cursor: pointer;
+}
+  
+img:hover{
+  transition: transform 0.3s ease; 
+}
+  
+.card img:hover {
+    transform: scale(1.05);
+}
+  
+.price{
+    text-align: center;
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+  
+.btn-outline-dark{
+    width: 390px;
+    text-align: center;
+}
+
+.container3{
+    background-image: url(./Login/32b4d7f9a4ea511758548f9b4c01a27b-fotor-2025021623028.jpg);
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+footer{
+    background-color: black;
+}
+    
+.mb-1, .mb-0{
+    color: white;
+}
+  
+a:hover{
+    color: blueviolet;
+}
+
+.carousel-inner{
+    width: 100%;
+    height: 70vh;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+  
+.container5{
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px; 
+    height: 88vh;
+    color: rgba(251, 251, 251, 0.925);
+}
+  
+.btn-outline-light{
+    width: 200px;
+    height: 50px;
+}
+  
+.red{
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    color: white;
+}
+  
+.text-container5{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+  
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+  }
+}
+
+.about{
+  width: 100%;
+  height: 100vh;
+  padding: 0px 0;
+  margin-top: -63px;
+}
+
+.about h1{
+  font-size: 60px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.about h1 span{
+  background: linear-gradient(to right, #6e6b6b , #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 15px;
+}
+
+.about .about_main{
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about .about_main .about_image{
+  display: flex;
+  margin-top: 50px;
+}
+
+.about .about_main .about_image .about_small_image{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 15px;
+}
+
+.about .about_main .about_image .about_small_image img{
+  height: 92px;
+  margin: 5px 0;
+  cursor: pointer;
+  background: linear-gradient(to right, #000000 , #969090);
+  display: block;
+  border-radius: 6px;
+  padding: 5px 5px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.about .about_main .about_image .about_small_image img:hover{
+  opacity: 1;
+}
+
+.about .about_main .image_contaner{
+  padding: 10px;
+  display: flex;
+  padding-right: 0px;
+  padding-left: 50px;
+}
+
+.about .about_main .image_contaner img{
+  border: 3px solid #000000;
+  border-radius: 20px;
+  height: 430px;
+  padding: 30px;
+  box-shadow: 0 0 8px #ffffff;
+}
+
+.about .about_main .about_text{
+  margin-top: 45px;
+}
+
+.about .about_main .about_text p{
+  background: linear-gradient(to left, #000000 , #726e6e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 22px;
+  width: 600px;
+  text-align: justify;
+  padding: 25px 30px;
+  border: 2px solid #080808;
+  border-radius: 20px;
+  box-shadow: 0 0 8px #000000;
+}
+
+.about .about_btn{
+  color: black;
+  background: none;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  padding: 10px 25px;
+  border: 2px solid #000000;
+  text-decoration: none;
+  box-shadow: 0 0 8px #000000;
+  transition: 0.5s;
+}
+
+.about .about_btn:hover{
+  border: 2px solid transparent;
+  background: #090909;
+  color: white;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  width: 15px;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: linear-gradient(to top, #181818 , #575555);
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.unit{
+  text-shadow: 3px -1px 4px rgb(21 113 186);
+}
+
+.bi-cart-check-fill{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.bi-heart-fill{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.bi-person-fill{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.bi-heart-fill:hover{
+  color: rgb(255, 0, 0);
+  transition: .5s ease;
+}
+
+.bi-cart-check-fill:hover{
+  color: rgb(134, 134, 134);
+  transition: .5s ease;
+}
+
+.bi-person-fill:hover{
+  color: rgb(255, 8, 202);
+  transition: .5s ease;
+}
+
+.nav-icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+  margin-right: 50px;
+}
+
+body {
+  opacity: 0;
+  animation: pageReveal 1s ease-in forwards;
+}
+
+@keyframes pageReveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .unit h1 {
+    font-size: 28px;
+  }
+
+  .carousel-inner {
+    height: 40vh;
+  }
+
+  .price {
+    font-size: large;
+  }
+
+  .btn-outline-dark {
+    width: 100%;
+  }
+
+  .about .about_main {
+    flex-direction: column;
+  }
+
+  .about .about_main .about_text p {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .nav-icons {
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+#cartPopup h6 {
+  color: #000; 
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.footer{
+  width: 100%;
+  height: auto;
+  background-color: rgb(27, 23, 23);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.footer-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-top: 5%;
+  padding-bottom: 25px;
+  margin-top: -50px;
+}
+
+.footer-button{
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.footer-button:hover{
+  background-color: #ffffff;
+  color: rgb(6, 6, 6);
+}
+
+.footer-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-top: 25px;
+  z-index: 10000;
+}
+
+.fa-facebook ,.fa-instagram ,.fa-linkedin ,.fa-github ,.fa-youtube{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}   
+
+.icons{
+  border: 1px solid #635f40;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.icon-facebook:hover{
+  background-color: rgb(62, 62, 191);
+  transition: 0.5s;
+}
+
+.icon-instagram:hover{
+  background: linear-gradient(to top, rgb(221, 239, 20) , rgb(207, 80, 143) , rgb(166, 2, 166));
+  transition: 0.5s;
+}
+
+.icon-linkedin:hover{
+  background-color: rgb(57, 57, 173);
+  transition: 0.5s;
+}
+
+.icon-github:hover{
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.icon-youtube:hover{
+  background-color: rgb(184, 15, 15);
+  transition: 0.5s;
+}
+
+.footer-paragraph{
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-top: -2px;
+}
+
+.footer-paragraph-span{
+  color: #967d00;
+  font-weight: bold;
+}
+
+@media (max-width:748px) {
+  .footer-buttons{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top:70px;
+      height: auto;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .nav-icons {
+    margin-right: 0;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .carousel-inner {
+    height: 250px;
+  }
+
+  .unit h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .unit p.lead {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-outline-light {
+    margin-left: 25%;
+  }
+
+  .card img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .card .card-text {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: large;
+  }
+
+  .btn-outline-dark {
+    width: 430px;
+    font-size: 14px;
+  }
+
+  .about {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .about h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .about .about_main {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    transform: none;
+    position: static;
+  }
+
+  .about .about_main .about_text {
+    margin-top: 0;
+  }
+
+  .about .about_main .about_text p {
+    width: 90%;
+    padding: 15px;
+    font-size: 15px;
+    text-align: justify;
+    border-radius: 15px;
+    box-shadow: 0 0 6px #000000;
+  }
+
+  .about .about_main .about_image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about .about_main .about_image .about_small_image {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .about .about_main .about_image .about_small_image img {
+    height: 60px;
+    margin: 3px;
+    padding: 3px;
+  }
+
+  .about .about_main .image_contaner {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .about .about_main .image_contaner img {
+    height: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+
+  .about .about_btn {
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  #backToTop {
+    bottom: 15px;
+    right: 15px;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  #cartPopup {
+    max-width: 90%;
+    right: 5%;
+    top: 60px;
+    padding: 10px;
+  }
+
+  #cartPopup ul {
+    font-size: 13px;
+  }
+
+  #cartPopup .btn {
+    font-size: 14px;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.card-icons i {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+  transition: transform 0.3s;
+}
+
+.card-icons .fa-heart:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+.card-icons .fa-share-nodes:hover {
+  transform: scale(1.2);
+  color: rgb(250, 23, 250);
+}
+
+.card:hover .card-icons {
+  opacity: 1;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+            <path d="M 3.53125 24.222656 C 4.5 26.84375 6.957031 28.382813 10.417969 28.382813 C 11.300781 28.382813 12.203125 28.253906 13.089844 28.003906 C 13.234375 27.96875 18.75 26.472656 25.484375 24.644531 C 18.839844 27.519531 13.074219 29.996094 11.90625 30.460938 L 11.84375 30.488281 C 10.164063 31.160156 8.070313 31.996094 6.132813 31.996094 C 2.742188 31.996094 2 29.761719 2 28.902344 C 2 27.902344 2.335938 26.398438 3.53125 24.222656 M 49.839844 16.003906 C 49.785156 16.003906 49.722656 16.011719 49.644531 16.03125 C 49.480469 16.070313 12.566406 26.074219 12.566406 26.074219 C 11.855469 26.273438 11.128906 26.382813 10.417969 26.382813 C 7.226563 26.382813 5.078125 24.851563 5.078125 21.507813 C 5.078125 20.207031 5.484375 18.640625 6.40625 16.800781 C 3.152344 20.621094 0 25.234375 0 28.902344 C 0 31.019531 1.78125 33.996094 6.128906 33.996094 C 8.484375 33.996094 10.820313 33.050781 12.648438 32.320313 C 15.730469 31.085938 49.789063 16.296875 49.789063 16.296875 C 50.058594 16.164063 50.066406 16.003906 49.839844 16.003906 Z"></path>
+            </svg>NIKE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categories
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./index.html">Shoes</a></li>
+                  <li><a class="nav-link disabled" aria-disabled="true" style="background-color: #000000; color:white; cursor: pointer;" >Clothing</a></li>
+                  <li><a class="dropdown-item" href="./sport.html">Sports</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Setting</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#shop-drop">Shop</a></li>
+                    <li><a class="dropdown-item" href="#review-drop">Review</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="./contact.html">Contact US</a></li>
+                </ul>
+            </li>
+            </ul>
+            </ul>
+          </div>
+
+          <div class="nav-icons">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>
+        </div>
+        </div>
+      </nav>
+
+<div id="rt"></div>
+<div id="backToTop">↑ Top</div>
+
+<div class="container5">
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+              
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./image/N1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/N5.JPG" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/N3.JPG" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/N2.JPG" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/N4.JPG" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            
+            </div> </div>        
+          <div class="col-lg-6">
+            <div class="unit">
+            <h1><span class="red"><i>N</i></span>ew <span class="red"><i>C</i></span>ollection</h1>
+            <p class="lead">Buy now and get 10% off</p></div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="#rr">
+                <button type="button" class="btn btn-outline-light">Shop Now</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="products"></div>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container" id="rr" >
+          
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"  id="shop-drop">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/1.png">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$200.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/2.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$120.9</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/3.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$300</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/4.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$150.85</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/5.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$100.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/6.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$250.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/7.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$400.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/8.webp">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$198.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/9.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$130</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/10.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$150</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>     <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/11.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$110.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>     <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/12.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$180.98</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>     <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/13.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$200.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>     <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/14.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$100.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>    
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/15.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$150.80</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/16.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$200.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/17.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$380.36</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/18.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$186.52</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/19.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$200.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/20.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$176.80</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <div class="col">
+              <div class="card shadow-sm">
+                <img src="./image/21.jpg">
+                <div class="card-icons">
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">stylish, comfortable, and designed for high performance in every move.</p>
+                  <p class="price">$140.99</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-dark">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <div id="review"></div>  
+    <div id="review-drop"></div>
+    <div class="about" id="About">
+      <br> <br>
+      
+      <h1>New<span>collection</span></h1>
+
+      <div class="about_main">
+          <div class="about_image">
+              <div class="about_small_image">
+                  <img src="./image/small3.jpg" onclick="functio(this)">
+                  <img src="./image/small1.jpg" onclick="functio(this)">
+                  <img src="./image/small5.jpg" onclick="functio(this)">
+                  <img src="./image/small2.jpg" onclick="functio(this)">
+              </div>
+              
+              <div class="image_contaner">
+                  <img src="./image/small7.jpg" id="imagebox">
+              </div>
+
+          </div>
+
+          <div class="about_text">
+              <p>
+                T-shirts are one of the most versatile and essential clothing items 
+                in any wardrobe, offering a perfect combination of comfort, simplicity, 
+                and style. Made from soft, breathable fabrics like cotton and polyester 
+                blends, they provide a lightweight feel suitable for everyday wear. Available 
+                in a variety of designs, from plain basics to graphic prints, T-shirts can be 
+                easily styled for casual outings or layered for a more fashionable look. Their
+                adaptability makes them ideal for all seasons, whether worn alone in warm weather 
+                or under jackets during colder months. With different fits, including slim, regular, 
+                and oversized, they cater to all body types and personal preferences. Popular among all 
+                age groups, T-shirts are a timeless fashion staple that effortlessly blends practicality 
+                with self-expression. Whether you prefer classic solid colors or bold statement designs, 
+                a well-chosen T-shirt enhances any outfit with minimal effort.
+              </p>
+          </div>
+      </div>
+      
+      <script>
+          function functio(small){
+              var full = document.getElementById("imagebox")
+              full.src = small.src
+          }
+      </script>
+      
+  </div>
+
+  <div class="footer">
+    <div class="footer-icon">
+        <div class="icon-facebook icons"><a href="https://www.facebook.com/nike/?locale=ar_AR"><i class="fa-brands fa-facebook"></i></a></div>
+        <div class="icon-instagram icons"><a href="https://www.instagram.com/nike/"><i class="fa-brands fa-instagram"></i></a></div>
+        <div class="icon-linkedin icons"><a href="https://www.linkedin.com/company/nike"><i class="fa-brands fa-linkedin"></i></a></div>
+        <div class="icon-github icons"><a href="https://github.com/nike-inc"><i class="fa-brands fa-github"></i></a></div>
+        <div class="icon-youtube icons"><a href="https://www.youtube.com/user/nike"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+    <div class="footer-buttons">
+        <a href="#home"><button class="footer-button">Home</button></a>
+        <a href="./about.html"><button class="footer-button" id="about">About</button></a>
+        <a href="#products"><button class="footer-button">Products</button></a>
+        <a href="#review"><button class="footer-button">Review</button></a>
+        <a href="./contact.html"><button class="footer-button">Contact</button></a>
+    </div>
+</div>
+
+
+<div id="cartPopup" style="display:none; position:fixed; top:70px; right:20px; background:rgb(251, 251, 251); border:1px solid #ccc; padding:15px; border-radius:8px; z-index:1000; box-shadow: 0px 0px 10px rgba(0,0,0,0.3); max-width: 300px;">
+  <h6>Your Cart</h6>
+  <ul id="cartItems" style="list-style:none; padding-left:0; font-size:14px; max-height: 200px; overflow-y: auto;">
+    <li>No items added yet</li>
+  </ul>
+  <a href="checkout.html" class="btn btn-success mt-2 w-100">Go to Payment</a>
+</div>
+
+<script>
+  const cartIcon = document.querySelector(".bi-cart-check-fill");
+  const cartPopup = document.getElementById("cartPopup");
+  const cartItems = document.getElementById("cartItems");
+
+  let cartData = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  cartIcon.addEventListener("click", () => {
+    cartPopup.style.display = cartPopup.style.display === "none" ? "block" : "none";
+  });
+
+  const addToCartButtons = document.querySelectorAll(".btn-outline-dark");
+
+  addToCartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".card");
+      const name = card.querySelector(".card-text")?.innerText || "Unnamed Product";
+      const price = card.querySelector(".price")?.innerText || "$0.00";
+      const imgSrc = card.querySelector("img")?.src || "";
+
+      const newItem = { name, price, img: imgSrc };
+      cartData.push(newItem);
+
+      localStorage.setItem("cartItems", JSON.stringify(cartData));
+
+      updateCart();
+    });
+  });
+
+  function updateCart() {
+    cartItems.innerHTML = "";
+    if (cartData.length === 0) {
+      cartItems.innerHTML = "<li>No items added yet</li>";
+      return;
+    }
+
+    cartData.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.style.display = "flex";
+      li.style.alignItems = "center";
+      li.style.marginBottom = "10px";
+      li.style.justifyContent = "space-between";
+
+      const left = document.createElement("div");
+      left.style.display = "flex";
+      left.style.alignItems = "center";
+
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.style.width = "40px";
+      img.style.height = "40px";
+      img.style.objectFit = "cover";
+      img.style.marginRight = "10px";
+      img.style.borderRadius = "5px";
+
+      const text = document.createElement("span");
+      text.innerHTML = `<span style="color:#000;">${item.name}</span> - <span style="color:#28a745;">${item.price}</span>`;
+
+      left.appendChild(img);
+      left.appendChild(text);
+
+      const removeBtn = document.createElement("button");
+      removeBtn.innerText = "✕";
+      removeBtn.style.border = "none";
+      removeBtn.style.background = "transparent";
+      removeBtn.style.color = "red";
+      removeBtn.style.fontSize = "16px";
+      removeBtn.style.cursor = "pointer";
+
+      removeBtn.addEventListener("click", () => {
+        cartData.splice(index, 1);
+        localStorage.setItem("cartItems", JSON.stringify(cartData)); 
+        updateCart();
+      });
+
+      li.appendChild(left);
+      li.appendChild(removeBtn);
+      cartItems.appendChild(li);
+    });
+  }
+
+  updateCart();
+
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        }
+    }
+}
+
+const backToTopBtn = document.getElementById("backToTop");
+
+function toggleBackToTop() {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+const navbar = document.querySelector("nav");
+
+function handleNavbarColor() {
+    if (window.scrollY > 100) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    revealOnScroll();         
+    toggleBackToTop();  
+    handleNavbarColor();      
+});
+
+window.addEventListener("scroll", () => {
+    revealOnScroll();
+    toggleBackToTop();
+    handleNavbarColor();
+});
+
+requestAnimationFrame(function scrollRepeat() {
+    revealOnScroll();
+    requestAnimationFrame(scrollRepeat); 
+});
+</script>
+</body>
+</html>

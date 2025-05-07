@@ -1,0 +1,23 @@
+version: '3' 
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  server:
+    build: .
+    container_name: nike-server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    restart: always
+
+volumes:
+  mongo-data:

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NIKE Server</title>
+  <link rel="shortcut icon" href="image/logo.png">
+<style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f0f0f0;
+    }
+    input, textarea {
+      display: block;
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #category{
+      width: 325px;
+      padding: 10px 20px;
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+  <h2>Add new collection</h2>
+
+<select id="category">
+  <option value="clothing">Clothing</option>
+  <option value="shoes">Shoes</option>
+  <option value="sport">Sport</option>
+</select><br><br>
+  <input type="text" id="name" placeholder="Product name">
+  <textarea id="description" placeholder="Product-description"></textarea>
+  <input type="number" id="price" placeholder="price">
+  <input type="text" id="image" placeholder=" image-link (ex: ./image/shoes1.png)">
+  <button onclick="addProduct()">Add product</button>
+  <p id="status"></p>
+
+  <script>
+      function addProduct() {
+      const name = document.getElementById("name").value;
+      const description = document.getElementById("description").value;
+      const price = parseFloat(document.getElementById("price").value);
+      const image = document.getElementById("image").value;
+      const category = document.getElementById("category").value;
+    
+      fetch('http://localhost:3000/api/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, description, price, image, category }) 
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById("status").innerText = "✅ تم إضافة المنتج بنجاح";
+        } else {
+          document.getElementById("status").innerText = "❌ فشل في الإضافة";
+        }
+      })
+      .catch(err => {
+        document.getElementById("status").innerText = "❌ خطأ في الاتصال بالسيرفر";
+      });
+    }
+  </script>
+</body>
+</html>

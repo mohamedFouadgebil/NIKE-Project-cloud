@@ -1,0 +1,264 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NIKE-Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/logo.png">
+<style>
+    body {
+        background-color: #f5f5f5;
+        padding: 50px 20px;
+    }
+    .checkout-container {
+        background: white;
+        max-width: 700px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .btn-checkout, .btn-clear, .btn-back {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .summary {
+        margin-top: 20px;
+        font-size: 1.2em;
+    }
+    .summary span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .summary .total, .summary .discount, .summary .paid, .summary .remaining {
+        font-weight: bold;
+    }
+    .summary input {
+        width: 100%;
+        padding: 8px;
+        font-size: 1.1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #checkoutItems {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    #checkoutItems li {
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="checkout-container">
+    <h2>Payment</h2>
+    <p class="text-muted">Review your items before proceeding to payment:</p>
+
+    <ul id="checkoutItems" class="list-group mb-3">
+        <li class="list-group-item text-muted">Loading your cart...</li>
+    </ul>
+
+    <div class="summary">
+        <span>Total Money: <span id="totalMoney">$0.00</span></span>
+        <span>Discount (%): <input type="number" id="discountInput" placeholder="Enter discount percentage" step="0.01" /></span>
+        <span class="discount">Discounted Total: <span id="finalAmount">$0.00</span></span>
+        <span>Paid: <input type="number" id="paidInput" placeholder="Enter amount paid" step="0.01" /></span>
+        <span class="remaining">Remaining: <span id="remainingAmount">$0.00</span></span>
+    </div>
+
+    <div class="mt-3">
+        <label for="paymentMethod" class="form-label">Payment Method</label>
+        <select id="paymentMethod" class="form-select">
+            <option value="card">Card</option>
+            <option value="cash">Cash</option>
+        </select>
+    </div>
+
+    <button id="completePayment" class="btn btn-success btn-checkout">Complete Payment</button>
+
+    <form id="paymentForm" class="mt-4">
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Card Number</label>
+            <input type="text" class="form-control" id="cardNumber" maxlength="16" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Expiration Date</label>
+            <input type="month" class="form-control" id="expiryDate" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvv" maxlength="3" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit Payment</button>
+    </form>
+
+    <button id="clearCart" class="btn btn-danger btn-clear">Clear Cart</button>
+    <a href="about.html" class="btn btn-secondary btn-back">Back to Shopping</a>
+</div>
+
+<script>
+const checkoutItems = document.getElementById("checkoutItems");
+const cartData = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+function renderCart() {
+    checkoutItems.innerHTML = "";
+    let total = 0;
+
+    if (cartData.length === 0) {
+        checkoutItems.innerHTML = "<li class='list-group-item'>Your cart is empty.</li>";
+        return;
+    }
+
+    cartData.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+        const img = document.createElement("img");
+        img.src = item.img;
+        img.alt = item.name;
+        img.style.width = "50px";
+        img.style.height = "50px";
+        img.style.objectFit = "cover";
+        img.style.marginRight = "10px";
+
+        const name = document.createElement("span");
+        name.textContent = item.name;
+
+        const price = document.createElement("span");
+        price.className = "badge bg-primary rounded-pill";
+        price.textContent = item.price;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.className = "btn btn-danger btn-sm";
+        removeBtn.textContent = "Remove";
+        removeBtn.style.marginLeft = "10px";
+
+        removeBtn.addEventListener("click", () => {
+            cartData.splice(index, 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartData));
+            renderCart();
+        });
+
+        const left = document.createElement("div");
+        left.className = "d-flex align-items-center";
+        left.appendChild(img);
+        left.appendChild(name);
+
+        li.appendChild(left);
+        li.appendChild(price);
+        li.appendChild(removeBtn);
+        checkoutItems.appendChild(li);
+
+        total += parseFloat(item.price.replace('$', ''));
+    });
+
+    document.getElementById("totalMoney").textContent = `$${total.toFixed(2)}`;
+    updateSummary(total);
+}
+
+function updateSummary(total) {
+    const discount = parseFloat(document.getElementById("discountInput").value) || 0;
+    const paidAmount = parseFloat(document.getElementById("paidInput").value) || 0;
+
+    const discountAmount = (total * discount) / 100;
+    const finalAmount = total - discountAmount;
+    const remainingAmount = paidAmount - finalAmount;
+
+    document.getElementById("finalAmount").textContent = `$${finalAmount.toFixed(2)}`;
+    document.getElementById("remainingAmount").textContent = `$${remainingAmount.toFixed(2)}`;
+}
+
+document.querySelectorAll('#discountInput, #paidInput').forEach(input => {
+    input.addEventListener("input", () => {
+        const totalMoney = parseFloat(document.getElementById("totalMoney").textContent.replace('$', ''));
+        updateSummary(totalMoney);
+    });
+});
+
+const paymentMethodSelect = document.getElementById("paymentMethod");
+const paymentForm = document.getElementById("paymentForm");
+
+paymentMethodSelect.addEventListener("change", () => {
+    paymentForm.style.display = paymentMethodSelect.value === "card" ? "block" : "none";
+});
+
+function saveInvoice() {
+    const totalMoney = parseFloat(document.getElementById("totalMoney").textContent.replace('$', ''));
+    const discount = parseFloat(document.getElementById("discountInput").value) || 0;
+    const discountAmount = (totalMoney * discount) / 100;
+    const finalAmount = totalMoney - discountAmount;
+
+    fetch('http://localhost:3000/api/invoices', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            items: cartData,
+            total: finalAmount.toFixed(2)
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Invoice saved:", data);
+        localStorage.removeItem("cartItems");
+        alert("✅ Payment successful! Invoice saved.");
+        window.location.href = "index.html"; 
+    })
+    .catch(error => {
+        console.error("Error saving invoice:", error);
+        alert("❌ Error saving invoice. Try again later.");
+    });
+}
+
+document.getElementById("completePayment").addEventListener("click", () => {
+    if (cartData.length === 0) {
+        alert("Your cart is already empty.");
+        return;
+    }
+
+    const method = paymentMethodSelect.value;
+
+    if (method === "cash") {
+        saveInvoice();
+    } else {
+        paymentForm.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+paymentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("fullName").value;
+    const card = document.getElementById("cardNumber").value;
+    const expiry = document.getElementById("expiryDate").value;
+    const cvv = document.getElementById("cvv").value;
+
+    if (!name || !card || !expiry || !cvv) {
+        alert("Please fill in all payment details.");
+        return;
+    }
+
+    saveInvoice();
+});
+
+document.getElementById("clearCart").addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear the cart?")) {
+        localStorage.removeItem("cartItems");
+        location.reload();
+    }
+});
+
+renderCart();
+</script>
+</body>
+</html>
